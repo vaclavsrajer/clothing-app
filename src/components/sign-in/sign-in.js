@@ -72,7 +72,7 @@ const SignInForm = () => {
           value={password}
           minLength="6"
         />
-        <div className="button-container">
+        <div className="buttons-container">
           <Button children={"Sign In"} type="submit" />
           <Button
             buttonType={"google"}
