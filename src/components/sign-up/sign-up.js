@@ -36,11 +36,12 @@ const SignUpForm = () => {
         password
       );
 
-      await createUserDocumentFromAuth(user, { displayName: displayName });
+      await createUserDocumentFromAuth(user, {
+        displayName: displayName,
+      });
 
       resetFormFields();
     } catch (error) {
-      console.log(error.code);
       if (error.code === "auth/email-already-in-use") {
         alert("Cannot create user, email already in use");
       } else {
@@ -94,7 +95,7 @@ const SignUpForm = () => {
           value={confirmPassword}
           minLength="6"
         />
-        <Button children={"Sign Up"} type="submit"/>
+        <Button children={"Sign Up"} type="submit" />
       </form>
     </div>
   );

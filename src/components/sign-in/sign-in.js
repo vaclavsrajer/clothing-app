@@ -22,16 +22,14 @@ const SignInForm = () => {
   };
 
   const sigInWithGoogleUser = async () => {
-    const { user } = await signInWithGooglePopup();
-    const userDocRef = createUserDocumentFromAuth(user);
+    await signInWithGooglePopup();
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     try {
-      const response = await signInrWithEmailAndPassword(email, password);
-      console.log(response);
+      await signInrWithEmailAndPassword(email, password);
       resetFormFields();
     } catch (error) {
       console.log(error.code);
@@ -74,7 +72,7 @@ const SignInForm = () => {
           value={password}
           minLength="6"
         />
-        <div className="button-container">
+        <div className="buttons-container">
           <Button children={"Sign In"} type="submit" />
           <Button
             buttonType={"google"}
