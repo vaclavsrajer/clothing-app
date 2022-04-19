@@ -12,7 +12,7 @@ import { rootReducer } from "./root-reducer";
 const persistConfig = {
   key: "rout",
   storage: storage,
-  blacklist: ["cart"],
+  blacklist: ["user"],
 };
 
 const sagaMiddleware = createSagaMiddleware();
