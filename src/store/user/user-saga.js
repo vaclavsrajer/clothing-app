@@ -5,8 +5,8 @@ import { USER_ACTION_TYPES } from "./user-types";
 import {
   signInSuccess,
   signInFailed,
-  signUnSuccess,
-  signUnFailed,
+  signUpSuccess,
+  signUpFailed,
   signOutFailed,
   signOutSuccess,
 } from "./user-action";
@@ -68,9 +68,9 @@ export function* signInWithEmail({ payload: { email, password } }) {
 export function* singUpWithEmail({ payload: { email, password } }) {
   try {
     yield call(createAuthUserWithEmailAndPassword, email, password);
-    yield put(signUnSuccess());
+    yield put(signUpSuccess());
   } catch (error) {
-    yield put(signUnFailed(error));
+    yield put(signUpFailed(error));
   }
 }
 

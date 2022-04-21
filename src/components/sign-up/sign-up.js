@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { emailSingUpStart } from "../../store/user/user-action";
+import { emailSignUpStart } from "../../store/user/user-action";
 import FormInput from "../form-input/form-input";
 
 import { SignUpContainer, Title } from "./sign-up.styles.jsx";
@@ -30,15 +30,7 @@ const SignUpForm = () => {
     }
 
     try {
-      dispatch(emailSingUpStart(email, password, displayName));
-      // const { user } = await createAuthUserWithEmailAndPassword(
-      //   email,
-      //   password
-      // );
-
-      // await createUserDocumentFromAuth(user, {
-      //   displayName: displayName,
-      // });
+      dispatch(emailSignUpStart(email, password, displayName));
 
       resetFormFields();
     } catch (error) {
